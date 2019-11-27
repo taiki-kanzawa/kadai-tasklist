@@ -13,10 +13,7 @@
 
 Route::get('/', 'TasksController@index');
 
-// ログイン認証付きのルーティング
-Route::group(['middleware' => ['auth']], function () {
-    Route::resource('tasks', 'TasksController');
-});
+Route::resource('tasks', 'TasksController');
 
 // ユーザ登録
 Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');
